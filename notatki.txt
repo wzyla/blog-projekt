@@ -1,0 +1,54 @@
+ - pokaż bazy danych na serwerze
+show + enter i dopiero databases;
+create database nazwa; - stwórz bazę danych
+drop database nazwa; - usuń całą bazę danych
+
+strzałkami przeglądami porz. polecenia
+
+use nazwa; - użyj bazy o podanej nazwie
+show tables; - pokaż wszystkie tabele danej bazy
+
+create table DaneOsobowe
+    -> (
+    -> PK int primary key auto_increment
+    -> imie varchar(50),
+    -> nazwisko varchar(50),
+    -> wiek int
+    -> )
+    -> ;
+
+show tables; pokaż tabele bazy
+null - pole nieustalone baza ustawia sama
+
+Dodanie przykładowych danych (trochę niebezpieczny bo przez formularz dajemy dostęp do wszystkich pól)
+: 
+insert into DaneOsobowe values
+    -> (
+    -> null,'Tomasz','Kowalski',23),
+    -> (null,'Ania','Nowak',16);
+
+Teraz wypełniamy tylko podane pola a więc lepsze:
+insert into DaneOsobowe(imie,nazwisko,wiek) values
+    -> ('Ryszard','Nowak',40);
+
+select * from DaneOsobowe; - wyświetl dane z tabeli, '*' oznacza że należy pokazać wszystko
+
+select wiek, nazwisko from DaneOsobowe; - pokaż tylko wiek i nazwisko
+
+select wiek as age, nazwisko as lastName from DaneOsobowe; - wiek pokaż jako age itd;
+
+delete from DaneOsobowe where PK=2; - usuń
+
+delete from DaneOsobowe where imie='Ania' and nazwisko='Nowak';
+
+select from DaneOsobowe where imie='Zygmunt' and nazwisko='Nowak'; I dopiero delete
+
+update DaneOsobowe set imie='Zygmunt', wiek=60 where PK=4; - update bazy
+
+alter table Posts
+    -> add postTitle text not null; - dodanie pola tabeli do tabeli Posts
+
+desc Tabela; - pokaż strukturę tabeli "Tabela"
+
+
+MAMP\bin\mysql\bin\mysql -h localhost -u root -p

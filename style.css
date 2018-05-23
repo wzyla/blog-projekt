@@ -1,0 +1,21 @@
+a{
+  padding-top:7px;
+  padding-bottom:7px;
+  padding-left:4px;
+  padding-right:4px;
+  box-sizing: content-box;
+  background-color: brown;
+  text-decoration: none;
+  color:white;
+  border-radius: 5px;
+}
+a:hover{
+  background-color: rgb(124, 93, 64);
+  color: darkkhaki;
+}
+.hidden
+{
+  display: none;
+}
+
+
